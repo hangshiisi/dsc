@@ -1,0 +1,29 @@
+run
+test
+gen-idea
+idea-gen
+exit
+run
+exit
+run
+exit
+run
+exit
+run
+exit
+run
+exit
+run
+exit
+run
+reload
+run
+exit
+run
+reload
+run
+reload
+run
+run "/bin/echo hello"
+run "/bin/echo hello "
+exit
