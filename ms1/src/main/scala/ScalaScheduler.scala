@@ -60,7 +60,7 @@ class ScalaScheduler() extends Scheduler {
         val cpus = Resource.newBuilder.
           setType(org.apache.mesos.Protos.Value.Type.SCALAR)
           .setName("cpus")
-          .setScalar(org.apache.mesos.Protos.Value.Scalar.newBuilder.setValue(4.0))
+          .setScalar(org.apache.mesos.Protos.Value.Scalar.newBuilder.setValue(1.0))
           .setRole("*")
           .build
 
@@ -88,7 +88,8 @@ class ScalaScheduler() extends Scheduler {
   def submitTasks(tasks: String*) = {
     //this.synchronized {
         print("add tasks " + tasks) 
-      this._tasks.enqueue(tasks: _*)
+      // this._tasks.enqueue(tasks: _*)
+       this._tasks.enqueue("/bin/ls")
     //}
   }
 
