@@ -6,15 +6,4 @@ BROKER_URL='amqp://'
 CELERY_RESULT_BACKEND = "amqp"
 CELERY_IMPORTS=("tasks",)
 
-from celery.schedules import crontab
- 
-CELERYBEAT_SCHEDULE = {
-     'every-minute': {
-             'task': 'tasks.multiply',
-             'schedule': crontab(minute='*/1'),
-             'args': (1,2),
-     },
-}
-
-
 
