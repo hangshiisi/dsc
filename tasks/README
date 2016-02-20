@@ -1,0 +1,4 @@
+implementation of below: 
+	http://eon01.com/blog/celery-worker-rabbitmq-broker-step-by-step-introduction/
+	https://github.com/eon01/celery-rabbitmq-client-server
+
