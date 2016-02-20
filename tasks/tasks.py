@@ -1,13 +1,5 @@
-#from celery import Celery
+from celery.task import task 
 
-#app = Celery('tasks', broker='amqp://guest@localhost//')
-
-#@app.task
-#def add(x, y):
-#	    return x + y
-
-from celery.task import task
- 
 @task
 def multiply(x, y):
     multiplication = x * y
