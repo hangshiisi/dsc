@@ -7,3 +7,12 @@ def add(x, y):
     return x + y
 
 
+>>> from tasks import add
+>>> result = add.delay(4, 4)
+>>> result.ready()
+True
+>>> result.get(timeout=1)
+8
+>>> 
+
+
