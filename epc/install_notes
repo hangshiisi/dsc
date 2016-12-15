@@ -1,0 +1,57 @@
+http://www.intel.com/content/www/us/en/support/network-and-i-o/wireless-networking/000005511.html
+
+
+To install firmware:
+
+    Copy the files into the distribution-specific firmware directory, /lib/firmware.
+    If the directory does not work, consult your distribution documentation.
+    If you configure the kernel yourself, make sure firmware loading is enabled.
+
+
+lshw -class network
+
+uname -a; lspci -nnk | grep -iA2 net; rfkill list all
+
+
+
+patched module 
+	https://forums.linuxmint.com/viewtopic.php?t=223036
+
+backports 
+
+	https://forums.linuxmint.com/viewtopic.php?t=219117
+
+wget https://www.kernel.org/pub/linux/kernel/projects/backports/stable/v4.2.6/backports-4.2.6-1.tar.gz
+tar -zxvf backports-4.2.6-1.tar.gz
+cd backports-4.2.6-1
+make defconfig-iwlwifi
+make
+sudo make install
+
+
+
+744  cd openairinterface5g/
+  745  ls
+  746  git branch
+  747  git status
+  748  git checkout develop
+  749  git branch
+  750  git pull
+  751  git checkout master
+  752  git pull
+  753  git branch
+  754  git checkout develop
+  755  git branch
+  756  source oaienv
+  757  cd cmake_targets/
+  758  ls
+  759  ./build_oai -I -g --eNB -x --install-system-files -w USRP --install-optional-packages
+  760  ./build_oai --eNB -c -W USRP
+  761  ./build_oai --eNB -c -w USRP
+  762  cd lte_build_oai/build/
+  763  sudo -E ./lte-softmodem -O /home/aurora/EPC/openairinterface5g/targets/PROJECTS/GENERIC-LTE-EPC/CONF/enb.band7.tm1.usrpb210.conf -d -W
+
+
+
+
+
